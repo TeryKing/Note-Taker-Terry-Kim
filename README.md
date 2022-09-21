@@ -17,7 +17,7 @@ This server.js file will utilize the html files via starter code to create a not
 
 ![App Screenshot](./deployexample.JPG)
 
-Deployed Heroku: https://powerful-chamber-88329.herokuapp.com/notes
+Deployed Heroku: https://powerful-chamber-88329.herokuapp.com/
 
 
 ## Authors
