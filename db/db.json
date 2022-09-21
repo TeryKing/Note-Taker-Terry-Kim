@@ -1,6 +1,8 @@
 [
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
+  1,
+  {
+    "title": "Note Taker Example",
+    "text": "Note Example",
+    "id": 0
+  }
 ]
