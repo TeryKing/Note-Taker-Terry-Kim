@@ -24,7 +24,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-
 function create(body, notearray){
     const newNote = body;
     if(!Array.isArray(notearray))
@@ -39,7 +38,6 @@ function create(body, notearray){
     fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(notearray, null, 2));
 
     return newNote;
-
 }
 
 app.post('/api/notes', (req, res) => {
@@ -64,7 +62,6 @@ app.delete('/api/notes/:id', (req, res) => {
     res.json(true);
 });
 
-
 app.listen(port, () => {
-    console.log(`Active port on ${port}!`);
+    console.log(`Active port on ${port}! `);
 });
