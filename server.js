@@ -1,3 +1,4 @@
+//initial const
 const fs = require("fs");
 const path = require("path");
 const port = process.env.PORT||3001;
@@ -5,10 +6,14 @@ const express = require("express");
 const app = express();
 const notes = require("./db/db.json");
 
+
+//normal express usage
 app.use(express.json());
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 
+
+//getting specific parts of the path of index and notes html
 app.get("/api/notes", (req,res)=>{
     res.json(notes.slice(1));
 });
@@ -24,6 +29,10 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
+
+
+
+//adding note function
 function create(body, notearray){
     const newNote = body;
     if(!Array.isArray(notearray))
@@ -45,6 +54,10 @@ app.post('/api/notes', (req, res) => {
     res.json(newNote);
 });
 
+
+
+
+//delete note function
 function deleteit(id, notearray){
     for(let i =0; i<notearray.length;i++){
         let note = notearray[1];
@@ -62,6 +75,11 @@ app.delete('/api/notes/:id', (req, res) => {
     res.json(true);
 });
 
+
+
+
+
+//console log for port calling
 app.listen(port, () => {
     console.log(`Active port on ${port}! `);
 });
